@@ -1,7 +1,16 @@
-'use client';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'PR Services Blog - Latest PR Tips and Industry Insights',
+  description: 'Stay updated with the latest PR trends, tips, and best practices. Expert insights on press release writing, media relations, and PR strategy.',
+  keywords: 'PR blog, press release tips, PR industry news, media relations blog, PR strategy insights',
+};
 
 const blogPosts = [
   {
+    slug: 'how-to-write-an-effective-press-release',
     title: 'How to Write an Effective Press Release',
     excerpt: 'Learn the key elements that make a press release stand out and get noticed by journalists and media outlets.',
     date: 'December 24, 2023',
@@ -11,6 +20,7 @@ const blogPosts = [
     image: '/blog/press-release-writing.jpg'
   },
   {
+    slug: 'maximizing-your-pr-distribution-strategy',
     title: 'Maximizing Your PR Distribution Strategy',
     excerpt: 'Discover the best practices for distributing your press release to reach the widest possible audience.',
     date: 'December 23, 2023',
@@ -20,6 +30,7 @@ const blogPosts = [
     image: '/blog/distribution-strategy.jpg'
   },
   {
+    slug: 'the-impact-of-ai-on-press-release-writing',
     title: 'The Impact of AI on Press Release Writing',
     excerpt: 'Explore how artificial intelligence is transforming the way we write and distribute press releases.',
     date: 'December 22, 2023',
@@ -50,12 +61,19 @@ export default function BlogPage() {
       {/* Blog posts grid */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post, index) => (
+          {blogPosts.map((post) => (
             <article
-              key={index}
+              key={post.slug}
               className="flex flex-col bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-all duration-300"
             >
-              <div className="h-48 bg-gray-200 rounded-t-2xl"></div>
+              <div className="relative h-48 bg-gray-200 rounded-t-2xl overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-x-4 text-xs">
                   <time dateTime={post.date} className="text-gray-500">
@@ -67,10 +85,10 @@ export default function BlogPage() {
                 </div>
                 <div className="group relative">
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600">
-                    <a href={`/blog/${post.title.toLowerCase().replace(/ /g, '-')}`}>
+                    <Link href={`/blog/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
-                    </a>
+                    </Link>
                   </h3>
                   <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.excerpt}</p>
                 </div>
@@ -78,10 +96,8 @@ export default function BlogPage() {
                   <div className="h-10 w-10 rounded-full bg-gray-100"></div>
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
-                      <a href="#">
-                        <span className="absolute inset-0" />
-                        {post.author}
-                      </a>
+                      <span className="absolute inset-0" />
+                      {post.author}
                     </p>
                     <p className="text-gray-600">{post.readTime}</p>
                   </div>
