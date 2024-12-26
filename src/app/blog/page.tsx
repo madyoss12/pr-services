@@ -62,48 +62,49 @@ export default function BlogPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <article
+            <Link
+              href={`/blog/${post.slug}`}
               key={post.slug}
-              className="flex flex-col bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 hover:shadow-lg transition-all duration-300"
+              className="group"
             >
-              <div className="relative h-48 bg-gray-200 rounded-t-2xl overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1 p-6">
-                <div className="flex items-center gap-x-4 text-xs">
-                  <time dateTime={post.date} className="text-gray-500">
-                    {post.date}
-                  </time>
-                  <span className="relative z-10 rounded-full bg-blue-50 px-3 py-1.5 font-medium text-blue-600">
-                    {post.category}
-                  </span>
+              <article className="flex flex-col h-full bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 group-hover:shadow-lg transition-all duration-300">
+                <div className="relative h-48 bg-gray-200 rounded-t-2xl overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600">
-                    <Link href={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
+                <div className="flex-1 p-6">
+                  <div className="flex items-center gap-x-4 text-xs">
+                    <time dateTime={post.date} className="text-gray-500">
+                      {post.date}
+                    </time>
+                    <span className="relative z-10 rounded-full bg-blue-50 px-3 py-1.5 font-medium text-blue-600">
+                      {post.category}
+                    </span>
+                  </div>
+                  <div className="mt-3">
+                    <h3 className="text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600">
                       {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.excerpt}</p>
-                </div>
-                <div className="mt-6 flex items-center gap-x-4">
-                  <div className="h-10 w-10 rounded-full bg-gray-100"></div>
-                  <div className="text-sm leading-6">
-                    <p className="font-semibold text-gray-900">
-                      <span className="absolute inset-0" />
-                      {post.author}
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {post.excerpt}
                     </p>
-                    <p className="text-gray-600">{post.readTime}</p>
+                  </div>
+                  <div className="mt-6 flex items-center gap-x-4">
+                    <div className="h-10 w-10 rounded-full bg-gray-100"></div>
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        {post.author}
+                      </p>
+                      <p className="text-gray-600">{post.readTime}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
 
