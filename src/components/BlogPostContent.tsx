@@ -19,7 +19,7 @@ export default function BlogPostContent({ publishDate, modifiedDate }: BlogPostC
         modifiedDate={modifiedDate}
         authorName="John Smith"
         images={['/blog/press-release-writing-hero.jpg']}
-        url="https://prservices.com/blog/how-to-write-an-effective-press-release"
+        url="https://pr-services.vercel.app/blog/how-to-write-an-effective-press-release"
       />
 
       {/* Hero Section */}
@@ -121,7 +121,7 @@ export default function BlogPostContent({ publishDate, modifiedDate }: BlogPostC
             <h3 className="text-xl font-semibold mb-4">Related Resources</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/blog/maximizing-your-pr-distribution-strategy" className="text-blue-600 hover:text-blue-800">
+                <Link href="https://pr-services.vercel.app/blog/maximizing-your-pr-distribution-strategy" className="text-blue-600 hover:text-blue-800">
                   → Maximize Your PR Distribution Strategy
                 </Link>
                 <p className="text-sm text-gray-600 mt-1">
@@ -129,7 +129,7 @@ export default function BlogPostContent({ publishDate, modifiedDate }: BlogPostC
                 </p>
               </li>
               <li>
-                <Link href="/blog/the-impact-of-ai-on-press-release-writing" className="text-blue-600 hover:text-blue-800">
+                <Link href="https://pr-services.vercel.app/blog/the-impact-of-ai-on-press-release-writing" className="text-blue-600 hover:text-blue-800">
                   → The Impact of AI on Press Release Writing
                 </Link>
                 <p className="text-sm text-gray-600 mt-1">
@@ -137,7 +137,7 @@ export default function BlogPostContent({ publishDate, modifiedDate }: BlogPostC
                 </p>
               </li>
               <li>
-                <Link href="/services" className="text-blue-600 hover:text-blue-800">
+                <Link href="https://pr-services.vercel.app/services" className="text-blue-600 hover:text-blue-800">
                   → Professional PR Writing Services
                 </Link>
                 <p className="text-sm text-gray-600 mt-1">
@@ -187,7 +187,7 @@ export default function BlogPostContent({ publishDate, modifiedDate }: BlogPostC
           </p>
           <div className="mt-8">
             <Link
-              href="/contact"
+              href="https://pr-services.vercel.app/contact"
               className="rounded-md bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-sm hover:bg-blue-50"
             >
               Get Started Today
