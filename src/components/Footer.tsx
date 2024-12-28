@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import Logo from './Logo';
 
 const navigation = {
   services: [
@@ -76,10 +76,9 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <div className="flex flex-col items-start">
-              <div className="flex items-center">
-                <span className="text-2xl font-bold text-white">PR</span>
-                <span className="ml-2 text-2xl font-semibold text-white">Services</span>
-              </div>
+              <Link href="/" className="flex items-center">
+                <Logo className="text-white" />
+              </Link>
               <p className="mt-4 text-sm leading-6 text-gray-300">
                 Empowering your brand with strategic PR solutions that drive results and enhance your market presence.
               </p>
