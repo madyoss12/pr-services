@@ -77,7 +77,7 @@ export default function Footer() {
           <div className="space-y-8">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo-white.svg"
+                src="/logo.png"
                 alt="PR Services"
                 width={40}
                 height={40}
