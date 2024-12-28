@@ -77,14 +77,8 @@ export default function Footer() {
           <div className="space-y-8">
             <div className="flex flex-col items-start">
               <div className="flex items-center">
-                <Image
-                  src="/logo.png"
-                  alt="PR Services"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8"
-                />
-                <span className="ml-2 text-lg font-semibold text-white">PR Services</span>
+                <span className="text-2xl font-bold text-white">PR</span>
+                <span className="ml-2 text-2xl font-semibold text-white">Services</span>
               </div>
               <p className="mt-4 text-sm leading-6 text-gray-300">
                 Empowering your brand with strategic PR solutions that drive results and enhance your market presence.
