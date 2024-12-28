@@ -75,32 +75,34 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="PR Services"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-              <span className="ml-3 text-xl font-bold text-white">PR Services</span>
-            </Link>
-            <p className="text-sm leading-6 text-gray-300">
-              Empowering your brand with strategic PR solutions that drive results and enhance your market presence.
-            </p>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-gray-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
-              ))}
+            <div className="flex flex-col items-start">
+              <div className="flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt="PR Services"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
+                <span className="ml-2 text-lg font-semibold text-white">PR Services</span>
+              </div>
+              <p className="mt-4 text-sm leading-6 text-gray-300">
+                Empowering your brand with strategic PR solutions that drive results and enhance your market presence.
+              </p>
+              <div className="mt-6 flex space-x-6">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gray-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
@@ -168,7 +170,7 @@ export default function Footer() {
                       type="email"
                       autoComplete="email"
                       required
-                      className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                      className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-offset-2 focus:ring-blue-500 sm:text-sm sm:leading-6"
                       placeholder="Enter your email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
