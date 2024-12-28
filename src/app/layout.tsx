@@ -1,27 +1,33 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/Navbar'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'PR Services - Professional Press Release Distribution',
-  description: 'Choose from our range of PR distribution services. Get your story heard across multiple platforms and reach your target audience effectively.',
-}
+export const metadata: Metadata = {
+  title: 'PR Services - Professional Press Release Writing & Distribution',
+  description: 'Expert press release writing and distribution services to help your business get noticed by the media and reach your target audience.',
+  keywords: 'PR services, press release writing, media distribution, PR strategy, media relations',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <main className="pt-16">
-          {children}
-        </main>
+    <html lang="en" className="h-full">
+      <body className={`${inter.className} h-full`}>
+        <div className="flex flex-col min-h-full">
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
-  )
+  );
 }
